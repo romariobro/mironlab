@@ -208,9 +208,7 @@ body {
 .destination strong { color:#f5f9fc; line-height:1; }
 .destination i { color:#78d6ff; }
 
-.contact {
-  background:radial-gradient(circle at 8% 70%,rgba(85,199,255,.08),transparent 24rem);
-}
+.contact { background:none; }
 .contact-links { gap:16px; border:0; background:transparent; }
 .contact-links a {
   border:1px solid rgba(120,200,255,.16);
