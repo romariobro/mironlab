@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /jump-2026/
 
 Sitemap: https://mironlab.ru/sitemap.xml
