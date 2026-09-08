@@ -88,6 +88,12 @@ h2 { margin:0; font-size:clamp(2.8rem,5vw,5.7rem); line-height:.96; letter-spaci
 .metric-list strong { color:var(--accent); font-size:clamp(1.25rem,2vw,1.8rem); line-height:1; }
 .metric-icon svg { box-sizing:border-box; flex-shrink:0; width:52px; height:52px; padding:14px; border:1px solid rgba(255,255,255,.42); border-radius:3px; background:rgba(5,16,29,.62); color:#fff; stroke-width:1; }
 .metric-list span { margin-top:8px; color:#95adbe; font-size:.68rem; line-height:1.35; letter-spacing:.08em; text-transform:uppercase; }
+.video-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; }
+.video-card { padding:20px; border:1px solid var(--line); background:var(--surface); }
+.video-frame { aspect-ratio:16 / 9; background:#000; }
+.video-frame iframe { display:block; width:100%; height:100%; border:0; }
+.video-card h2 { margin:18px 0 8px; font-size:1.2rem; }
+.video-card p,.page-intro { color:var(--muted); line-height:1.55; }
 .scope-list { grid-template-columns:repeat(3,1fr); }
 .scope-list li { min-height:70px; color:#c1d2df; font-size:.72rem; font-weight:700; letter-spacing:.06em; text-align:center; }
 
@@ -148,6 +154,7 @@ a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-
   .project-card { padding:32px 0; }
   .project-meta { flex-direction:column; gap:8px; }
   .metric-list { grid-template-columns:1fr 1fr; }
+  .video-grid { grid-template-columns:1fr; gap:18px; }
   .scope-list { grid-template-columns:1fr; }
   .scope-list li { min-height:58px; }
   footer { min-height:140px; flex-direction:column; justify-content:center; gap:16px; }
