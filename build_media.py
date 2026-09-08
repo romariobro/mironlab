@@ -101,7 +101,7 @@ def langlabel(r, lang):
     return tr("Оригинал на русском","Original in Russian",lang) if r["language"]=="ru" else tr("Оригинал на английском","Original in English",lang)
 def navigation(lang, root, alternate):
     home=root+"../"
-    return f'<header class="media-nav"><a class="brand" href="{home}">MIRONLAB</a><nav><a href="{home}projects.html">{tr("Проекты","Projects",lang)}</a><a href="{root if lang=="ru" else root+"en/"}">{tr("Медиа","Media",lang)}</a><a href="{home}#contact">{tr("Контакты","Contact",lang)}</a><a class="language-link" href="{alternate}" lang="{tr("en","ru",lang)}">{tr("EN","RU",lang)}</a></nav></header>'
+    return f'<header class="media-nav"><a class="brand" href="{home}">MIRONLAB</a><nav><a href="{home}projects.html">{tr("Проекты","Projects",lang)}</a><a href="{root if lang=="ru" else root+"en/"}">{tr("Медиаматериалы","Media materials",lang)}</a><a href="{home}#contact">{tr("Контакты","Contact",lang)}</a><a class="language-link" href="{alternate}" lang="{tr("en","ru",lang)}">{tr("EN","RU",lang)}</a></nav></header>'
 def page(lang, content, root, alternate, page_title):
     return f'<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>{e(page_title)} — MironLab</title><meta name="description" content="{e(tr("Статьи, интервью и публикации о проектах Романа Мироничева.","Articles, interviews and coverage of Roman Mironichev’s projects.",lang))}"><link rel="stylesheet" href="{root}../jump.css?v=dark-restored"><link rel="stylesheet" href="{root}media.css?v=1"></head><body>{navigation(lang,root,alternate)}<main class="media-shell">{content}</main><footer><a href="{root}../">MironLab — Roman Mironichev</a><a href="{root if lang=="ru" else root+"en/"}">{tr("Все публикации","All publications",lang)}</a></footer><script src="{root}media.js?v=1" defer></script></body></html>'
 def card(r, lang, root):
@@ -121,7 +121,7 @@ def build():
         alternate="en/" if lang=="ru" else "../"
         intro=tr("Избранные статьи, интервью и публикации о моей работе в разработке продуктов, управлении проектами, технологиях, маркетинге и цифровой трансформации.","Selected articles, interviews and media coverage related to my work in product development, project management, technology, marketing and digital transformation.",lang)
         attribution=tr("Здесь собраны мои публикации и материалы о продуктах и компаниях, над которыми я работал. Моя роль указана отдельно на странице каждого материала.","The collection includes my own publications and coverage of products and companies I worked with. My role is listed separately on each material’s page.",lang)
-        heading=tr("Медиа и публикации","Media & Publications",lang)
+        heading=tr("Медиаматериалы","Media materials",lang)
         content=f'<section class="media-intro"><h1>{heading}</h1><p>{intro}</p><p>{attribution}</p><a href="#all-media">{tr("Материалов: ","Materials: ",lang)}{len(records)} ↓</a></section>'
         filters=''.join(f'<button type="button" data-filter-group="{e(g)}" aria-pressed="false">{e(GROUPS[g] if lang=="ru" else g)}</button>' for g in GROUPS if any(r["group"]==g for r in records))
         topics=sorted({t for r in records for t in r["topics"]})
