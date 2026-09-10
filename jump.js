@@ -18,12 +18,13 @@ function setMenuOpen(open) {
 
 function setLanguage(language) {
   const lang = language === "en" ? "en" : "ru";
+  const rootPrefix = window.location.pathname.includes("/en/") ? "../" : "";
   document.documentElement.lang = lang;
   document.querySelectorAll("[data-cv-link]").forEach(link => {
-    link.href = "cv/Roman_Mironichev_Product_Marketing_Operations_" + lang.toUpperCase() + "_2026.pdf";
+    link.href = rootPrefix + "cv/Roman_Mironichev_Product_Marketing_Operations_" + lang.toUpperCase() + "_2026.pdf";
   });
   document.querySelectorAll("[data-media-link]").forEach(link => {
-    link.href = lang === "en" ? "media/en/" : "media/";
+    link.href = rootPrefix + (lang === "en" ? "media/en/" : "media/");
   });
   document.title = lang === "ru"
     ? (document.body.classList.contains("projects-page") ? "Проекты — MironLab" : "Miron Lab — Product & Operations")
@@ -41,8 +42,9 @@ function setLanguage(language) {
 }
 
 buttons.forEach((button) => button.addEventListener("click", () => setLanguage(button.dataset.lang)));
-let savedLanguage = "ru";
+let savedLanguage = window.location.pathname.includes("/en/") ? "en" : "ru";
 try { savedLanguage = localStorage.getItem("mironlab-jump-language") || "ru"; } catch {}
+if (window.location.pathname.includes("/en/")) savedLanguage = "en";
 setLanguage(savedLanguage);
 
 menuToggle?.addEventListener("click", () => {
