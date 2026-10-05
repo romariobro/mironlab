@@ -65,6 +65,13 @@ h1 span + span { margin-top:12px; }
 h2 { margin:0; font-size:clamp(2.8rem,5vw,5.7rem); line-height:.96; letter-spacing:-.052em; }
 .section-intro { max-width:790px; margin:28px 0 0; color:var(--muted); font-size:1.05rem; line-height:1.65; }
 
+.quick-links-section { padding-top:0; }
+.quick-links { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.quick-link { min-height:118px; display:flex; flex-direction:column; justify-content:space-between; padding:20px; border:1px solid var(--line); border-radius:16px; background:rgba(13,34,56,.5); transition:border-color .2s ease, transform .2s ease; }
+.quick-link:hover { border-color:var(--accent); transform:translateY(-3px); }
+.quick-link span { color:var(--accent); font-size:.72rem; font-weight:700; letter-spacing:.12em; }
+.quick-link strong { max-width:18ch; font-size:1.08rem; line-height:1.1; }
+.quick-link b { align-self:flex-end; color:var(--accent); font-size:1.2rem; }
 .capability-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
 .capability-card { min-height:285px; display:grid; grid-template-rows:auto 1fr auto; padding:34px; border:1px solid var(--line); border-radius:20px; background:linear-gradient(145deg,rgba(17,43,69,.96),rgba(10,30,49,.96)); }
 .line-icon { width:54px; height:54px; display:grid; place-items:center; border:1px solid rgba(85,199,255,.45); border-radius:15px; background:rgba(85,199,255,.08); color:var(--accent); font-size:1.35rem; }
@@ -75,6 +82,9 @@ h2 { margin:0; font-size:clamp(2.8rem,5vw,5.7rem); line-height:.96; letter-spaci
 .project-list { border-top:1px solid var(--line); }
 .about-copy { max-width:980px; color:var(--muted); font-size:clamp(1rem,1.5vw,1.2rem); line-height:1.8; }
 .about-copy p { margin:28px 0 0; }
+.about-label { margin-top:34px !important; color:var(--text); font-size:.78rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+.about-metrics { margin:18px 0 0; padding-left:1.25rem; display:grid; gap:10px; }
+.about-metrics li { padding-left:6px; }
 .projects-heading { padding-top:150px; padding-bottom:40px; }
 .projects-page h1 { font-size:clamp(2.8rem,7vw,5rem); }
 .projects-page .section-projects { padding-top:0; }
@@ -148,7 +158,8 @@ a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-
   .button { min-width:0; min-height:50px; flex:1 1 145px; padding:0 13px; font-size:.62rem; }
   .button-primary { flex-basis:100%; }
   h2 { font-size:clamp(2.6rem,12vw,4rem); }
-  .capability-grid { grid-template-columns:1fr; }
+  .quick-links { grid-template-columns:1fr 1fr; }
+.capability-grid { grid-template-columns:1fr; }
   .capability-card { min-height:250px; padding:27px; }
   .section-heading { margin-bottom:42px; }
   .project-card { padding:32px 0; }
