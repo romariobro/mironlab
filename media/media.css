@@ -34,3 +34,7 @@
 .detail .button { margin-top:24px; }
 @media(max-width:960px) { .media-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media(max-width:600px) { .media-grid { grid-template-columns:1fr; } .media-nav { align-items:flex-start; flex-direction:column; gap:18px; } .media-nav nav { gap:16px; font-size:.85rem; } .media-intro { padding:48px 0; } .media-shell { padding-inline:18px; } .card-copy { padding:20px; } }
+
+.detail-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:24px 0; }
+.detail-gallery .detail-image { margin:0; }
+@media(max-width:600px) { .detail-gallery { grid-template-columns:1fr; } }
