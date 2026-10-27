@@ -26,7 +26,7 @@ function setLanguage(language) {
   document.querySelectorAll("[data-media-link]").forEach(link => {
     link.href = rootPrefix + (lang === "en" ? "media/en/" : "media/");
   });
-  document.title = document.body.classList.contains("services-page") ? (lang === "ru" ? "Сервисы — MironLab" : "Services — MironLab") : lang === "ru"
+  document.title = document.body.classList.contains("pet-projects-page") ? (lang === "ru" ? "Pet projects 2026 — MironLab" : "Pet projects 2026 — MironLab") : document.body.classList.contains("services-page") ? (lang === "ru" ? "Сервисы — MironLab" : "Services — MironLab") : lang === "ru"
     ? (document.body.classList.contains("projects-page") ? "Проекты — MironLab" : "Miron Lab — Product & Operations")
     : (document.body.classList.contains("projects-page") ? "Projects — MironLab" : "Miron Lab — Product & Operations");
 
